@@ -8,7 +8,7 @@ public class ProyectoCitasG15Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoCitasG15Application.class, args);
-		System.out.println("Citas");
+		System.out.println("Citas1");
 	}
 
 }
