@@ -10,5 +10,4 @@ public class ProyectoCitasG15Application {
 		SpringApplication.run(ProyectoCitasG15Application.class, args);
 		System.out.println("Citas");
 	}
-
 }

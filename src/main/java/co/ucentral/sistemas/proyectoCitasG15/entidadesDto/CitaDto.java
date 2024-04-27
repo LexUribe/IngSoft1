@@ -1,4 +1,4 @@
-package co.ucentral.sistemas.proyectoCitasG15.dto;
+package co.ucentral.sistemas.proyectoCitasG15.entidadesDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,8 @@ import lombok.ToString;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
 
 import java.io.Serializable;
+import java.sql.Time;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,17 +23,19 @@ public class CitaDto implements Serializable {
     @NotBlank(message = "El estado es obligatorio")
     private String estado;
 
-    /*@NotBlank(message = "La fecha es obligatoria")
-    private date fecha;
+    @NotBlank(message = "La fecha es obligatoria")
+    private Date fecha;
 
-    @NotBlank(message = "La hora de inicio es obligatoria")
-    private time horaInicio;
+    private Time horaInicio;
 
-    private Empleado idEmpleado;
+    /*private Empleado idEmpleado;
 
+    @NotBlank(message = "La sede es obligatoria")
     private Sede idSede;
 
+    @NotBlank(message = "El servicio es obligatorio")
     private Servicio idServicio;
 
+    @NotBlank(message = "El cliente es obligatorio")
     private Cliente idCliente;*/
 }
