@@ -15,9 +15,9 @@ import java.util.Date;
 @Table(name = "CITAS")
 public class Cita {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_CITAS")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CITAS")
     @SequenceGenerator(name = "SEQ_CITAS", allocationSize = 1)
-    @Column(name = "CIT_IDCITA")
+    @Column(name = "CIT_ID")
     private int idCita;
 
     @Column(name = "CIT_NUMTURNO")

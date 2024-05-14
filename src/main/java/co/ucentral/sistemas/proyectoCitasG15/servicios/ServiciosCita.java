@@ -18,16 +18,7 @@ public class ServiciosCita implements Serializable {
     private final RepositorioCita repositorioCita;
 
     public CitaDto agendarCita(CitaDto citaDto) {
-        if (citaDto != null){
-            Cita cita = repositorioCita.save(modelMapper.map(citaDto, Cita.class));
-            return modelMapper.map(cita, CitaDto.class);
-        }
-        else
-            return null;
-    }
-
-    public List<CitaDto> obtenerCitas() {
-        TypeToken<List<CitaDto>> typeToken = new TypeToken<>() {};
-        return modelMapper.map(repositorioCita.findAll(), typeToken.getType());
+        Cita cita = repositorioCita.save(modelMapper.map(citaDto, Cita.class));
+        return modelMapper.map(cita, CitaDto.class);
     }
 }

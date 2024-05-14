@@ -6,6 +6,4 @@ import java.util.List;
 
 public interface OperacionesCita {
     public CitaDto agendarCita(CitaDto citaDto);
-
-    public List<CitaDto> obtenerCitas();
 }

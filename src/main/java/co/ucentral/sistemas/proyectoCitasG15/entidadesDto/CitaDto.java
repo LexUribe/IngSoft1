@@ -1,5 +1,6 @@
 package co.ucentral.sistemas.proyectoCitasG15.entidadesDto;
 
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Table(name = "citas")
 @ToString
 public class CitaDto implements Serializable {
     private int idCita;

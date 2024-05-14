@@ -4,7 +4,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
-    <title>Lista Citas</title>
+    <title>Agenda tu cita</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -21,13 +21,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed"
-                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar">
-                <span class="sr-only">App Citas DINER </span> <span
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span
-                    class="icon-bar"></span>
-            </button>
         </div>
     </div>
 </nav>
@@ -36,7 +29,8 @@
 <div class="container">
     <h1>Opciones</h1>
     <br>
-    <a class="navbar-brand" href="#" th:href="@{/citas}">Listado de citas</a>
+    <a class="btn btn-primary" href="#" th:href="@{/citas/nuevo}">Agendar Cita</a>
+    <br><br>
 </div>
 <script
         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

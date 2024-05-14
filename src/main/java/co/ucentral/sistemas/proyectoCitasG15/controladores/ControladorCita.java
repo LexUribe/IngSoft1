@@ -17,9 +17,8 @@ public class ControladorCita {
     ServiciosCita serviciosCita;
 
     @GetMapping({"/citas"})
-    public String buscarCitas(Model model) {
-        model.addAttribute("citas", this.serviciosCita.obtenerCitas());
-        return "citas";
+    public String inicio(Model model) {
+        return "index";
     }
 
     @GetMapping("/citas/nuevo")
