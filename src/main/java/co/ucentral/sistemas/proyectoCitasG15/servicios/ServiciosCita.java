@@ -5,17 +5,20 @@ import co.ucentral.sistemas.proyectoCitasG15.entidadesDto.CitaDto;
 import co.ucentral.sistemas.proyectoCitasG15.repositorios.RepositorioCita;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
-import java.util.List;
 
 @AllArgsConstructor
 @Service
 public class ServiciosCita implements Serializable {
     private ModelMapper modelMapper;
-    private final RepositorioCita repositorioCita;
+
+    private RepositorioCita repositorioCita;
+
+    public ServiciosCita(RepositorioCita repositorioCita) {
+        this.repositorioCita = repositorioCita;
+    }
 
     public CitaDto agendarCita(CitaDto citaDto) {
         Cita cita = repositorioCita.save(modelMapper.map(citaDto, Cita.class));
