@@ -17,6 +17,4 @@ public class ServicioDto implements Serializable {
     private long idServicio;
 
     private String nombre;
-
-    private String descripcion;
 }

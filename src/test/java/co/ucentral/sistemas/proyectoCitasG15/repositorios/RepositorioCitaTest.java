@@ -13,8 +13,8 @@ class RepositorioCitaTest {
     @Autowired
     private RepositorioCita repositorioCita;
 
-    /*@Test
-    @DisplayName("Prueba creando una cita")*/
+    @Test
+    @DisplayName("Prueba crear cita")
     void testCreaCita() {
         /*Cita cita = Cita
                 .builder()
@@ -27,14 +27,13 @@ class RepositorioCitaTest {
 
         cita.setTurno("C01");
         cita.setEstado("Activa");
-        cita.setFecha(fecha);*/
+        cita.setFecha(fecha);
 
-        /*Cita prueba = repositorioCita.save(cita);
-        repositorioCita.save(cita);
-        assertNotNull(cita);*/
-        /*assertThat(prueba).isNotNull();
+        Cita prueba = repositorioCita.save(cita);
+        assertNotNull(prueba);
+        assertThat(prueba).isNotNull();
         assertThat(prueba.getIdCita()).isGreaterThan(0);
-        assertThat(prueba.getIdCita()).isPositive()
-        assertThat(prueba.getTurno()).isEqualTo("C01")*/
+        assertThat(prueba.getIdCita()).isPositive();
+        assertThat(prueba.getTurno()).isEqualTo("C01");*/
     }
 }

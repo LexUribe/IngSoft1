@@ -1,7 +1,10 @@
 package co.ucentral.sistemas.proyectoCitasG15.controladores;
 
+import co.ucentral.sistemas.proyectoCitasG15.entidades.Cita;
 import co.ucentral.sistemas.proyectoCitasG15.entidadesDto.CitaDto;
 import co.ucentral.sistemas.proyectoCitasG15.servicios.ServiciosCita;
+import co.ucentral.sistemas.proyectoCitasG15.servicios.ServiciosSede;
+import co.ucentral.sistemas.proyectoCitasG15.servicios.ServiciosServicio;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,12 @@ public class ControladorCita {
     @Autowired
     ServiciosCita serviciosCita;
 
+    @Autowired
+    ServiciosSede serviciosSede;
+
+    @Autowired
+    ServiciosServicio serviciosServicio;
+
     @GetMapping({"/citas"})
     public String inicio(Model model) {
         return "index";
@@ -25,6 +34,8 @@ public class ControladorCita {
     public String mostrarFormulario(Model model) {
         CitaDto citaDto = new CitaDto();
         model.addAttribute("cita", citaDto);
+        model.addAttribute("sede", serviciosSede.obtenerSede());
+        model.addAttribute("servicio", serviciosServicio.obtenerSede());
         return "agendar_cita";
     }
 

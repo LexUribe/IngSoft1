@@ -35,19 +35,31 @@
                 <div class="card-body">
                     <form th:action="@{/citas}" method="post" th:object="${cita}">
                         <div class="form-group">
-                            <label class="control-label" for="numTurno">Numero de turno: </label> <input
-                                id="numTurno" type="text" class="form-control" th:field="*{numTurno}"
-                                required autofocus="autofocus">
+                            <label class="control-label" for="sede">Sede: </label>
+                            <div class="col-sm-8">
+                                <select id="sede" th:field="*{idSede}" class="form-control" required>
+                                    <th:block th:each="sedes : ${sede}">
+                                        <option th:text="${sedes.nombre}" th:value="${sedes.idSede}"></option>
+                                    </th:block>
+                                </select>
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="fecha">Fecha: </label> <input
-                                id="fecha" type="text" class="form-control" th:field="*{fecha}"
-                                required autofocus="autofocus">
+                            <label class="control-label" for="servicio">Servicio: </label>
+                            <div class="col-sm-8">
+                                <select id="servicio" th:field="*{idServicio}" class="form-control" required>
+                                    <th:block th:each="servicios : ${servicio}">
+                                        <option th:text="${servicios.nombre}" th:value="${servicios.idServicio}"></option>
+                                    </th:block>
+                                </select>
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="hora">Hora: </label> <input
-                                id="hora" type="text" class="form-control" th:field="*{horaInicio}"
-                                required autofocus="autofocus">
+                            <label class="control-label" for="cita">Citas disponibles: </label>
+                            <!--<div class="col-sm-8">
+                                <select th:field="*{cita}" class="form-control" required>
+                                    <th:block th:each="cita : ${agendar_cita}">
+                                        <option th:text="${cita.nombre}" th:value="${cita.idCita}"></option>
+                                    </th:block>
+                                </select>-->
                         </div>
                         <br>
                         <div class="form-group">

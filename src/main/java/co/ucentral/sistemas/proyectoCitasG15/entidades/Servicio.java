@@ -19,9 +19,6 @@ public class Servicio {
     @Column(name = "ser_idservicio", nullable = false)
     private long idServicio;
 
-    @Column(name = "ser_nombre")
+    @Column(name = "ser_nombre", nullable = false)
     private String nombre;
-
-    @Column(name = "ser_descripcion")
-    private String descripcion;
 }
