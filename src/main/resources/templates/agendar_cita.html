@@ -21,7 +21,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#" th:href="@{/citas}">Opciones</a>
+            <a class="navbar-brand" href="#" th:href="@{/opciones}">Opciones</a>
         </div>
     </div>
 </nav>
@@ -43,6 +43,7 @@
                                     </th:block>
                                 </select>
                         </div>
+                            <br>
                         <div class="form-group">
                             <label class="control-label" for="servicio">Servicio: </label>
                             <div class="col-sm-8">
@@ -51,15 +52,12 @@
                                         <option th:text="${servicios.nombre}" th:value="${servicios.idServicio}"></option>
                                     </th:block>
                                 </select>
+                            </div>
                         </div>
+                            <br>
                         <div class="form-group">
-                            <label class="control-label" for="cita">Citas disponibles: </label>
-                            <!--<div class="col-sm-8">
-                                <select th:field="*{cita}" class="form-control" required>
-                                    <th:block th:each="cita : ${agendar_cita}">
-                                        <option th:text="${cita.nombre}" th:value="${cita.idCita}"></option>
-                                    </th:block>
-                                </select>-->
+                            <label class="control-label" for="hora">Horas disponibles: </label>
+                            <input id="hora" type="time" th:field="*{horaInicio}" required>
                         </div>
                         <br>
                         <div class="form-group">
@@ -69,6 +67,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <br> <br>
     </div>
 </div>
