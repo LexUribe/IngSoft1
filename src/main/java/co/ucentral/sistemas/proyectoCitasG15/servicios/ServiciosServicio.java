@@ -25,7 +25,7 @@ public class ServiciosServicio implements Serializable {
         return modelMapper.map(servicio, ServicioDto.class);
     }
 
-    public List<ServicioDto> obtenerServicio() {
+    public List<ServicioDto> obtenerServicios() {
         TypeToken<List<ServicioDto>> typeToken = new TypeToken<>() {};
         return modelMapper.map(repositorioServicio.findAll(), typeToken.getType());
     }

@@ -4,11 +4,9 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
-    <title>Agenda tu cita</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Citas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
 
     <!-- Optional theme -->
@@ -21,26 +19,37 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#" th:href="@{/}">Inicio</a>
+            <a class="navbar-brand" href="#" th:href="@{/opciones}">Opciones</a>
         </div>
     </div>
 </nav>
 <br>
 <br>
-<div class="container">
-    <h1>Opciones</h1>
+<div class="container" style="width : 90%">
     <br>
     <a class="btn btn-primary" href="#" th:href="@{/citas/nuevo}">Agendar Cita</a>
-    <br><br>
-    <a class="btn btn-primary" href="#" th:href="@{/cita/lista}">Ver Citas</a>
-    <br><br>
+
+    <br> <br>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>Codigo</th>
+            <th>Sede</th>
+            <th>Servicio</th>
+            <th>Hora</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="citas : ${cita}">
+            <td th:text="${citas.idCita}">Codigo</td>
+            <td th:text="${citas.idSede}">Sede</td>
+            <td th:text="${citas.idServicio}">Servicio</td>
+            <td th:text="${citas.horaInicio}">Hora</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 </body>
-<footer th:fragment="pie" class="bg-dark">
-    <p>Pruebas</p>
-</footer>
 </html>
