@@ -34,7 +34,7 @@ public class Cita {
     @Column(name = "CIT_FECHA")
     private LocalDate fecha;
 
-    @Column(name = "CIT_HORAINICIO")
+    @Column(name = "CIT_HORAINICIO", nullable = false)
     private LocalTime horaInicio;
 
     @ManyToOne

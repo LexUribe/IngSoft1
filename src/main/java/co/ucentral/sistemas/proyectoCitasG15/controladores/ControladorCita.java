@@ -1,6 +1,5 @@
 package co.ucentral.sistemas.proyectoCitasG15.controladores;
 
-import co.ucentral.sistemas.proyectoCitasG15.entidades.Cita;
 import co.ucentral.sistemas.proyectoCitasG15.entidadesDto.CitaDto;
 import co.ucentral.sistemas.proyectoCitasG15.servicios.ServiciosCita;
 import co.ucentral.sistemas.proyectoCitasG15.servicios.ServiciosSede;
@@ -25,8 +24,11 @@ public class ControladorCita {
     @Autowired
     ServiciosServicio serviciosServicio;
 
-    @GetMapping({"/citas"})
-    public String inicio(Model model) {
+    @GetMapping({"/opciones"})
+    public String opciones() { return "opciones"; }
+
+    @GetMapping({"/"})
+    public String inicio() {
         return "index";
     }
 
@@ -35,13 +37,13 @@ public class ControladorCita {
         CitaDto citaDto = new CitaDto();
         model.addAttribute("cita", citaDto);
         model.addAttribute("sede", serviciosSede.obtenerSede());
-        model.addAttribute("servicio", serviciosServicio.obtenerSede());
+        model.addAttribute("servicio", serviciosServicio.obtenerServicio());
         return "agendar_cita";
     }
 
     @PostMapping("/citas")
     public String agendarCita(@ModelAttribute("cita") CitaDto citaDto) {
         serviciosCita.agendarCita(citaDto);
-        return "redirect:/citas";
+        return "redirect:/opciones";
     }
 }
