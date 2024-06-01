@@ -34,7 +34,7 @@
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
         <tr>
-            <th>Codigo</th>
+            <th>Código</th>
             <th>Sede</th>
             <th>Servicio</th>
             <th>Hora</th>
@@ -43,9 +43,9 @@
         <tbody>
 
         <tr th:each="citas : ${cita}">
-            <td th:text="${citas.idCita}">Codigo</td>
-            <td th:text="${citas.idSede}">Sede</td>
-            <td th:text="${citas.idServicio}">Servicio</td>
+            <td th:text="${citas.idCita}">Código</td>
+            <td th:text="${citas.idSede.nombre}">Sede</td>
+            <td th:text="${citas.idServicio.nombre}">Servicio</td>
             <td th:text="${citas.horaInicio}">Hora</td>
         </tr>
         </tbody>
